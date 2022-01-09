@@ -49,4 +49,6 @@ class clsConfig {
 	} // constructor
 
 } // class
+
 ?>
+

@@ -57,12 +57,12 @@ class clstask extends clsUtil {
 
 
     $ID = self::RandomString(50);
-    $SQL = "INSERT INTO task (TeaskRecID) VALUES (?)";
+    $SQL = "INSERT INTO task (TaskRecID) VALUES (?)";
     $S = $this->DB->Connection->prepare($SQL);
     $S->bind_param("s", $ID);
     $S->execute();
     $S->close();
-    $this->TeaskRecID = $ID;
+    $this->TaskRecID = $ID;
 
     // Load up our database defaults into the "buffer"
 
@@ -78,7 +78,7 @@ class clstask extends clsUtil {
 
     $SQL = "DELETE FROM task WHERE TeaskRecID = ?";
     $S = $this->DB->Connection->prepare($SQL);
-    $S->bind_param("s", $this->TeaskRecID);
+    $S->bind_param("s", $this->TaskRecID);
     $S->execute();
     $S->close();
 
@@ -99,8 +99,7 @@ class clstask extends clsUtil {
     //
 
 
-
-          $this->TaskRecID = stripslashes($this->TaskRecID);
+      $this->TaskRecID = stripslashes($this->TaskRecID);
       $this->Name = stripslashes($this->Name);
 
 
@@ -116,9 +115,9 @@ class clstask extends clsUtil {
     //
 
 
-    $SQL = "UPDATE task SET TaskRecID = ?, Name = ? WHERE TeaskRecID = ?";
+    $SQL = "UPDATE task SET TaskRecID = ?, Name = ? WHERE TaskRecID = ?";
     $S = $this->DB->Connection->prepare($SQL);
-    $S->bind_param("sss", $this->TaskRecID, $this->Name,$this->TeaskRecID);
+    $S->bind_param("sss", $this->TaskRecID, $this->Name,$this->TaskRecID);
     $S->execute();
     $S->close();
 
@@ -133,7 +132,7 @@ class clstask extends clsUtil {
 
   public function FindByID ($ID) {
 
-    $SQL = "SELECT TaskRecID, Name FROM task WHERE TeaskRecID = ?";
+    $SQL = "SELECT TaskRecID, Name FROM task WHERE TaskRecID = ?";
     $S = $this->DB->Connection->prepare($SQL);
     $S->bind_param("s", $ID);
 
