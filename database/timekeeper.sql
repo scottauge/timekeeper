@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 11:17 PM
+-- Generation Time: Jan 09, 2022 at 04:00 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `client` (
-  `ClientRecID` varchar(30) NOT NULL,
+  `ClientRecID` varchar(50) NOT NULL,
   `Name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,7 +39,7 @@ CREATE TABLE `client` (
 --
 
 CREATE TABLE `parm` (
-  `ParmRecID` varchar(30) NOT NULL,
+  `ParmRecID` varchar(50) NOT NULL,
   `Name` varchar(30) NOT NULL,
   `Value` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -51,8 +51,8 @@ CREATE TABLE `parm` (
 --
 
 CREATE TABLE `project` (
-  `ProjectRecID` varchar(30) NOT NULL,
-  `ClientRecID` varchar(30) NOT NULL,
+  `ProjectRecID` varchar(50) NOT NULL,
+  `ClientRecID` varchar(50) NOT NULL,
   `Name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,9 +63,9 @@ CREATE TABLE `project` (
 --
 
 CREATE TABLE `session` (
-  `SessionRecID` varchar(30) NOT NULL,
+  `SessionRecID` varchar(50) NOT NULL,
   `Cookie` varchar(30) NOT NULL,
-  `UserRecID` varchar(30) NOT NULL,
+  `UserRecID` varchar(50) NOT NULL,
   `LastUsed` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -76,9 +76,16 @@ CREATE TABLE `session` (
 --
 
 CREATE TABLE `task` (
-  `TaskRecID` varchar(30) NOT NULL,
+  `TaskRecID` varchar(50) NOT NULL,
   `Name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `task`
+--
+
+INSERT INTO `task` (`TaskRecID`, `Name`) VALUES
+('1641697071htLrKwZdGE9cyx4rHy5TOMHWa6h9JmyIohGQ2lbY', 'Auge');
 
 -- --------------------------------------------------------
 
@@ -87,11 +94,11 @@ CREATE TABLE `task` (
 --
 
 CREATE TABLE `time` (
-  `TimeRecID` varchar(30) NOT NULL,
-  `UserRecID` varchar(30) NOT NULL,
-  `ClientRecID` varchar(30) NOT NULL,
-  `ProjectRecID` varchar(30) NOT NULL,
-  `TaskRecID` varchar(30) NOT NULL,
+  `TimeRecID` varchar(50) NOT NULL,
+  `UserRecID` varchar(50) NOT NULL,
+  `ClientRecID` varchar(50) NOT NULL,
+  `ProjectRecID` varchar(50) NOT NULL,
+  `TaskRecID` varchar(50) NOT NULL,
   `StartTime` datetime NOT NULL,
   `EndTime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -103,10 +110,10 @@ CREATE TABLE `time` (
 --
 
 CREATE TABLE `user` (
-  `UserRecID` varchar(30) NOT NULL,
+  `UserRecID` varchar(50) NOT NULL,
   `FirstName` varchar(20) NOT NULL,
   `LastName` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Password` varchar(50) NOT NULL,
   `UserID` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
