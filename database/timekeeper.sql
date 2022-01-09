@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2022 at 04:00 AM
+-- Generation Time: Jan 09, 2022 at 04:04 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -79,13 +79,6 @@ CREATE TABLE `task` (
   `TaskRecID` varchar(50) NOT NULL,
   `Name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `task`
---
-
-INSERT INTO `task` (`TaskRecID`, `Name`) VALUES
-('1641697071htLrKwZdGE9cyx4rHy5TOMHWa6h9JmyIohGQ2lbY', 'Auge');
 
 -- --------------------------------------------------------
 
