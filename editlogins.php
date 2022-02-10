@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <header>
-<title></title>
+<title>Edit Logins</title>
 </header>
 <body>
 </body>

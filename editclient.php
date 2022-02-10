@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <header>
-<title></title>
+<title>Edit Clients</title>
 </header>
 <body>
 </body>
