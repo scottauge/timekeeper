@@ -24,86 +24,45 @@ require([
 		
 		switch (this.get("label")) {
 			
+			// Account
+			
 			case "Logout":
 			  location.assign("index.php");
 			  break;
-			  
-			case "New Activity":
-			  location.assign("newactivity.php");
-			  break;
-			  
-			case "Search Activity":
-			  location.assign("searchactivity.php");
-			  break;	
-			  
+			    
 		    case "My Account":
 			  location.assign("myaccount.php");
+			  break;		  			  
+			  			  		
+			// Time
+			
+			case "Set Start":
+			  location.assign("setstart.php");
 			  break;
 			  
-		    case "Search Person":
-			  location.assign("searchpeople.php");
+		    case "Set End":
+			  location.assign("setend.php");
 			  break;
 			  
-		    case "New Person":
-			  location.assign("newpeople.php");
-			  break;
-
-		    case "New Advertiser":
-			  location.assign("newadvertiser.php");
-			  break;
-
-		    case "Search Advertiser":
-			  location.assign("searchadvertiser.php");
+			// Definitions
+			
+			case "Tasks":		  			  
+			  location.assign("edittasks.php");
 			  break;
 			  
-		    case "New Vendor":
-			  location.assign("newvendor.php");
-			  break;
+			case "Projects":		  			  
+			  location.assign("editproj.php");
+			  break;		  
 			  
-		    case "Search Vendor":
-			  location.assign("searchvendor.php");
-			  break;			  			  
-			  			  			  
+			case "Clients":		  			  
+			  location.assign("editclient.php");
+			  break;			  
+			
+			// Admin
+			
 			case "Change Log":
 			  window.open("changelog.php", "ChangeLog");
-			  break;	
-			  
-			case "Tasks":		  			  
-			  location.assign("tasks.php");
 			  break;
-			  
-			case "By Activity":		  			  
-			  location.assign("rptbyactivity.php");
-			  break;	
-			  
-			case "By Membership":		  			  
-			  location.assign("rptbymembership.php");
-			  break;
-			  
-			case "Advertiser":		  			  
-			  location.assign("rptAdvertiser.php");
-			  break;			  
-			  
-			  
-			// Campaigns
-			
-			case "Send Emails":		  			  
-			  location.assign("rptemail.php");
-			  break;
-			  
-			case "Print Letters":		  			  
-			  location.assign("rptletter.php");
-			  break;
-			  
-			case "Print Mail Labels":		  			  
-			  location.assign("rptletterlabel.php");
-			  break;			  			  	  		  
-			  		
-			case "Edit Letter/Email":		  			  
-			  location.assign("listletters.php");
-			  break;
-			  
-			// Parameters
 			
 			case "Parameters":		  			  
 			  location.assign("ParameterMaintenance.php");
@@ -125,7 +84,7 @@ require([
 	
 	
     var pMenuBar = new MenuBar({});
-
+/*
     var People = new DropDownMenu({});
     People.addChild(new MenuItem({
         label: "New Person",
@@ -155,9 +114,9 @@ require([
         label: "People",
         popup: People
     }));
+*/
 
-
-
+/*
     var Activity = new DropDownMenu({});
     Activity.addChild(new MenuItem({
         label: "New Activity",
@@ -176,13 +135,14 @@ require([
 		onClick: onItemSelect
     }));
 	*/
+	/*
     pMenuBar.addChild(new PopupMenuBarItem({
         label: "Activities",
         popup: Activity
     }));
+	*/
 	
-	
-	
+	/*
 	var Reports = new DropDownMenu({});
 	
     Reports.addChild(new MenuItem({
@@ -202,57 +162,52 @@ require([
         label: "Reports",
         popup: Reports
     }));
+    */
 
-
-
-    var Tasks = new DropDownMenu({});
-    Tasks.addChild(new MenuItem({
-        label: "Tasks",
+    
+    var Time = new DropDownMenu({});
+	
+    Time.addChild(new MenuItem({
+        label: "Set Start",
 		onClick: onItemSelect
     }));
-	/*
-	Tasks.addChild(new MenuItem({
-        label: "Search Tasks",
+	
+    Time.addChild(new MenuItem({
+        label: "Set End",
 		onClick: onItemSelect
-    }));
-	*/
+    }));	
+	
 	pMenuBar.addChild(new PopupMenuBarItem({
-        label: "Tasks",
-        popup: Tasks
+        label: "Time",
+        popup: Time
     }));
+		
 	
-	
-	
-	var Campaign = new DropDownMenu({});
-    Campaign.addChild(new MenuItem({
-        label: "Edit Letter/Email",
+	var Definitions = new DropDownMenu({});
+    Definitions.addChild(new MenuItem({
+        label: "Tasks",
 		onClick: onItemSelect
     }));
-    Campaign.addChild(new MenuItem({
-        label: "Print Letters",
+    Definitions.addChild(new MenuItem({
+        label: "Projects",
 		onClick: onItemSelect
     }));	
     //Campaign.addChild(new MenuItem({
     //    label: "Print Mail Labels",
 	//	onClick: onItemSelect
     //}));		
-    Campaign.addChild(new MenuItem({
-        label: "Send Emails",
+    Definitions.addChild(new MenuItem({
+        label: "Clients",
 		onClick: onItemSelect
     }));	
     pMenuBar.addChild(new PopupMenuBarItem({
-        label: "Campaign",
-        popup: Campaign
+        label: "Definitions",
+        popup: Definitions
     }));
 	
 	
     var Admin = new DropDownMenu({});
-	/*
-    Admin.addChild(new MenuItem({
-        label: "Review Suggestions",
-		onClick: onItemSelect
-    }));	
-	*/
+
     Admin.addChild(new MenuItem({
         label: "Suggestion Box",
 		onClick: onItemSelect

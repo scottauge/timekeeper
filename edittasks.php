@@ -1,8 +1,22 @@
 <!doctype html>
+<?php
+
+?>
 <html>
 <header>
-<title>Edit Taks</title>
+<title>Edit Tasks</title>
 </header>
-<body>
+<?php include "incMenu.php" ?>
+
+<body  class="claro">
+<div id="wrapper"></div>
+<input type="submit" value="Create">
+<?php
+
+?>
+<a href=""></a>
+<?php
+
+?>
 </body>
 </html>

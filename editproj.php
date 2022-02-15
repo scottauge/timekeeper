@@ -3,6 +3,9 @@
 <header>
 <title>Edit Projects</title>
 </header>
-<body>
+<?php include "incMenu.php" ?>
+
+<body  class="claro">
+<div id="wrapper"></div>
 </body>
 </html>
